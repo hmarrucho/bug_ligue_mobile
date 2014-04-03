@@ -65,7 +65,7 @@ function seDeconnecter(){
  *
  */
 function authentifierUser($l,$m){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
 
     $dql = "SELECT u FROM User u WHERE u.login = '$l' AND u.mdp = '$m'";
 
@@ -88,7 +88,7 @@ function authentifierUser($l,$m){
 
 //Fonction qui va rechercher les bugs du clubs
 function getBugsOpenByUser($id){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $users = $entityManager->find('User', $id);
     $bugs = $users->getReportedBugs();
     $tab1 = array();
@@ -108,7 +108,7 @@ function getBugsOpenByUser($id){
 
 //Fonction qui va rechercher les bugs assignés au technicien
 function getBugsAssign($id){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $users = $entityManager->find('User', $id);
     $bugs = $users->getAssignedBugs();
     $tab1 = array();
@@ -128,7 +128,7 @@ function getBugsAssign($id){
 
 //Fonction qui va rechercher la totalité des produits
 function getAllProducts(){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $productRepository = $entityManager->getRepository('Product');
     $products = $productRepository->findAll();
     return $products;
@@ -136,7 +136,7 @@ function getAllProducts(){
 
 //Fonction qui va rechercher la totalité des bugs
 function getAllBugs(){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $bugRepository = $entityManager->getRepository('Bug');
     $bugs = $bugRepository->findAll();
     $tab1 = array();
@@ -156,7 +156,7 @@ function getAllBugs(){
 
 //Fonction qui va rechercher l'ensemble des techniciens
 function getAllTech(){
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $techRepository = $entityManager->getRepository('User');
     $techs = $techRepository->findAll();
 
@@ -180,7 +180,7 @@ function ajouterNewBug(){
         $apps = $_POST['apps'];
     }
 
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
 
     $reporter = $entityManager->find("User", $_SESSION['login']['id']);
     //$engineer = new User();
@@ -238,7 +238,7 @@ function ajouterNewBug(){
 function updateAssign(){
     $idbug = $_REQUEST['bug'];
     $id_engineer = $_REQUEST['engineer'];
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $engineer= $entityManager->find("User", $id_engineer);
     $bug = $entityManager->find("Bug",$idbug);
     $bug->setEngineer($engineer);
@@ -252,7 +252,7 @@ function updateAssign(){
 function updatePrio(){
     $idbug = $_REQUEST['bug'];
     $prio = $_REQUEST['prio'];
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
     $bug = $entityManager->find("Bug",$idbug);
     $bug->setPriorite($prio);
 
@@ -266,7 +266,7 @@ function closeBug(){
     $idbug = $_REQUEST['bug'];
     $note = $_REQUEST['note'];
 
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
 
     $bug = $entityManager->find("Bug",$idbug);
     $bug->setNote($note);
@@ -286,7 +286,7 @@ function closeBug(){
 function deletBug(){
     $idbug = $_REQUEST['bug'];
 
-    require "bootstrap.php";
+    require $_SERVER['DOCUMENT_ROOT']."/bug_ligue_mobile/bootstrap.php";
 
     $bug = $entityManager->find("Bug",$idbug);
     $entityManager->remove($bug);
