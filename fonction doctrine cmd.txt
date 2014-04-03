@@ -1,0 +1,8 @@
+C:\pareid-stage\wamp\www\bug
+
+php vendor/doctrine/orm/bin/doctrine orm:schema-tool:update --force --dump-sql
+
+Fonction qui permet de faire un var_dump sous doctrine :
+
+\Doctrine\Common\Util\Debug::dump($variable);
+

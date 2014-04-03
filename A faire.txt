@@ -1,0 +1,16 @@
+OK - affichage des bugs par date
+OK - Indiquer le nombre de bug ouvert
+OK - Indiquer le nombre de bug total
+OK - Indiquer le nombre de bug non assigné
+OK - Capture d'écran (declaration bug)
+OK - Redirection de la page connexion si on est déjà identifié
+OK - Ajout d'une colonne note de cloture dans les dashboard
+OK - Icone bug
+OK- Regroupé les css
+- Supprimé les elements inutile
+
+Partie Responsable :
+OK - Suppression (optionel - commencer)
+OK - Assignation sur bug clos à enlevé
+- Ajout d'une priorité
+OK - Nombre de bug assigné par technicien

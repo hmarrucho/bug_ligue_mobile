@@ -1,0 +1,15 @@
+Fonction 			? 				                    Retour
+estUnCp			    Test un code Postal			        Vrai ou Faux
+estEntier		    Test si entier				        Vrai ou Faux
+estUnMail		    Test un mail				        Vrai ou Faux
+estConnecter		Test si l’user est connecter 		1 si connecté 0 sinon
+seDeconnecter		Deconnecte l’user			        Aucun
+authentifierUser	Test si l’utilisateur exist		    1 si ok 0 sinon
+getBugsOpenBy		Récupère les bugs ouverts par l’user	Array contenant 2 array avec les bugs ouverts et les bugs clos
+getAllProducts		Récupère tous les produits		    Tableau de produits
+ajouterNewBug		Ajoute un nouveau bug 			    Echo
+getBugsAssign       Récupère les bugs assigné           Array contenant les bugs assigné
+closeBug            Clos un bug                         Echo
+getAllBugs          Récupère tous les bugs              Tableau de bugs
+updateAssign        Modifie la personne assigné         Void
+deletBug            Supprime un bug                     Void
