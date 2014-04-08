@@ -11,6 +11,7 @@ $(document).ready(function(){
         e.preventDefault();
         // on va chercher avec un appel Ajax/Json les données sur le ticket choisi
         var identifiant = $(this).find("td").eq(1).html();
+        alert(identifiant);
 
         $("#id_ticket").html(identifiant);
 

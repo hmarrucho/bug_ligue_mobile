@@ -39,10 +39,22 @@ switch($uc)
     }
     case 'dash':
     {
-        $the_bugs = getBugsOpenByUser(2);
+        if (isset($_SESSION['login'])){
+            if ($_SESSION['login']['fonction'] == "Responsable" ){
+                $the_bugs = getAllBugs();
+            }else{
+                if ($_SESSION['login']['fonction'] == "Technicien" ){
+                    $the_bugs = getBugsAssign($_SESSION['login']['id']);
+                }else{
+                    if ($_SESSION['login']['fonction'] == "Club" ){
+                        $the_bugs = getBugsOpenByUser($_SESSION['login']['id']);
+                    }
+                }
+            }
+        }
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
-        include("./vues/v_dashclub.php");
+        include("./vues/v_dash.php");
         break;
     }
 }

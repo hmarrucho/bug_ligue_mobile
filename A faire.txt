@@ -7,10 +7,19 @@ OK - Redirection de la page connexion si on est déjà identifié
 OK - Ajout d'une colonne note de cloture dans les dashboard
 OK - Icone bug
 OK- Regroupé les css
-- Supprimé les elements inutile
+OK - Supprimé les elements inutile
 
 Partie Responsable :
 OK - Suppression (optionel - commencer)
 OK - Assignation sur bug clos à enlevé
-- Ajout d'une priorité
+OK - Ajout d'une priorité
 OK - Nombre de bug assigné par technicien
+
+
+Vues :
+- Header
+- Footer
+
+- Appel Ajax
+- If Responsable bouton clore + assigné + priorité
+- if Technicien bouton clore
