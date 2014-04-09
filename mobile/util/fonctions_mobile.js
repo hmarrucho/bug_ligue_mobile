@@ -24,6 +24,13 @@ $(document).ready(function(){
                 $("tr[name=une_ligne]").remove();
                 $("#descri_ticket").html(data['description']);
                 $("#solution_ticket").html(data['resume']);
+                $("#note").html(data['note']);
+                $("#created").html(data['created']);
+                $("#engineer").html(data['engineer']);
+                $("#reporter").html(data['reporter']);
+                $("#products").html(data['products']);
+                $("#priorite").html(data['priorite']);
+                $("#image").html(data['image']);
 
                 // on active le clic sur le lien invisible pour déclencher le dialog
                 $('#lnkDialog').click();

@@ -195,9 +195,16 @@ class Bug
     public function jsonSerialize()
     {
         return array(
-            'id' => $this->id,
-            'description'=> $this->description,
+            'id'=> $this->id,
             'resume'=> $this->resume,
+            'description'=> $this->description,
+            'note'=> $this->note,
+            'created'=> $this->created,
+            'engineer'=>$this->engineer,
+            'reporter'=>$this->reporter,
+            'products'=>$this->products,
+            'priorite'=>$this->priorite,
+            'image'=>$this->image,
         );
     }
 }
