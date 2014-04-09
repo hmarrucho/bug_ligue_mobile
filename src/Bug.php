@@ -192,4 +192,12 @@ class Bug
     {
         $this->status = "CLOSE";
     }
+    public function jsonSerialize()
+    {
+        return array(
+            'id' => $this->id,
+            'description'=> $this->description,
+            'resume'=> $this->resume,
+        );
+    }
 }
