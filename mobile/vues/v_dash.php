@@ -94,6 +94,31 @@
         <div id="products"></div>
         <div id="priorite"></div>
         <div id="image"></div>
+        <div id="clore_bouton"></div>
+        <div id="assign_bouton"></div>
+        <div id="prio_bouton"></div>
+    </div>
+</div>
+
+<div data-role="dialog" id="ticket_clore">
+    <div data-role="header">
+        <h1>Clore le ticket N <div id="id_ticket"></div></h1>
+    </div>
+    <div data-role="content">
+        <form name='clos_bug' method='POST' action='index.php?uc=dash&action=list'>
+            <p>
+                <label for='note'>Note : </label>
+            </p>
+            <p>
+                <textarea name='note' rows='8' cols='50'>Ecrivez ici...</textarea>
+            </p>
+            <input type='hidden' name='bug' value='"+idbug+"'>
+            <center>
+                <p>
+                    <input type='submit' class='button' value='Valider' name='valider'>
+                </p>
+            </center>
+        </form>
     </div>
 </div>
 

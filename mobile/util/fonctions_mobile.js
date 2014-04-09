@@ -11,7 +11,7 @@ $(document).ready(function(){
         e.preventDefault();
         // on va chercher avec un appel Ajax/Json les données sur le ticket choisi
         var identifiant = $(this).find("td").eq(1).html();
-        alert(identifiant);
+        //alert (fonction);
 
         $("#id_ticket").html(identifiant);
 
@@ -25,12 +25,24 @@ $(document).ready(function(){
                 $("#descri_ticket").html(data['description']);
                 $("#solution_ticket").html(data['resume']);
                 $("#note").html(data['note']);
-                $("#created").html(data['created']);
+                $("#created").html(data['created']['date']);
                 $("#engineer").html(data['engineer']);
                 $("#reporter").html(data['reporter']);
                 $("#products").html(data['products']);
                 $("#priorite").html(data['priorite']);
                 $("#image").html(data['image']);
+                if (fonction == "Technicien" ){
+                    if(data['status'] == "Ouvert"){
+                        $("#clore_bouton").html("<a id='cloreBug' href='#ticket_clore' data-transition='flip' onClick='clore()'>Clore</a>");
+                    }
+                }
+                if (fonction == "Responsable" ){
+                    if(data['status'] == "Ouvert"){
+                        $("#clore_bouton").html("<a id='cloreBug' href='#ticket_clore' data-transition='flip' onClick='clore()'>Clore</a>");
+                        $("#assign_bouton").html("<a id='assignBug' href='#ticket_assign' data-transition='flip' onClick='assign_Bug_R()'>Assigner</a>");
+                        $("#prio_bouton").html("<a id='prioBug' href='#ticket_prio' data-transition='flip' onClick='prio()'>Priorité</a>");
+                    }
+                }
 
                 // on active le clic sur le lien invisible pour déclencher le dialog
                 $('#lnkDialog').click();
@@ -39,4 +51,10 @@ $(document).ready(function(){
             }
         });
     });
+
+    function clore(){
+        var identifiant = $(this).find("td").eq(1).html();
+
+
+    }
 });

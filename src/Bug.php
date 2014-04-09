@@ -188,23 +188,37 @@ class Bug
         return $this->products;
     }
 
+    public function getProductsName(){
+        $nameP ="";
+        foreach ($this->getProducts() as $product) {
+            $nameP = $nameP. "- ".$product->getName()."</br>";
+        }
+        return $nameP;
+    }
     public function close()
     {
         $this->status = "CLOSE";
     }
     public function jsonSerialize()
     {
+        if($this->getEngineer() == null){
+            $Engineer = "non affecté";
+        }else{
+            $Engineer = $this->getEngineer()->getName();
+        }
+
         return array(
             'id'=> $this->id,
             'resume'=> $this->resume,
             'description'=> $this->description,
             'note'=> $this->note,
             'created'=> $this->created,
-            'engineer'=>$this->engineer,
-            'reporter'=>$this->reporter,
-            'products'=>$this->products,
+            'engineer'=>$Engineer,
+            'reporter'=>$this->getReporter()->getName(),
+            'products'=>$this->getProductsName(),
             'priorite'=>$this->priorite,
             'image'=>$this->image,
+            'status'=>$this->status
         );
     }
 }

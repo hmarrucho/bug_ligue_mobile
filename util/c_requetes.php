@@ -14,4 +14,8 @@ switch($_POST['action']){
     {
         echo getBugById($_POST['data']);//$_POST['data']);
     }
+    case 'clore_ticket':
+    {
+
+    }
 }

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./lib/jquery.mobile-1.4.2.min.css">
+    <script> var fonction = "<?php echo $_SESSION['login']['fonction']; ?>";</script>
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="./lib/jquery.mobile-1.4.2.min.js"></script>
     <script src="./util/fonctions_mobile.js"></script>
