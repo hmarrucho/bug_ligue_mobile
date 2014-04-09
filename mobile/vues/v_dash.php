@@ -87,6 +87,13 @@
         <div id="descri_ticket"></div>
         <hr/>
         <div id="solution_ticket"></div>
+        <div id="note"></div>
+        <div id="created"></div>
+        <div id="engineer"></div>
+        <div id="reporter"></div>
+        <div id="products"></div>
+        <div id="priorite"></div>
+        <div id="image"></div>
     </div>
 </div>
 
