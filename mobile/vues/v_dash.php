@@ -102,23 +102,19 @@
 
 <div data-role="dialog" id="ticket_clore">
     <div data-role="header">
-        <h1>Clore le ticket N <div id="id_ticket"></div></h1>
+        <h1>Clore le ticket N <div id="id_tick"></div></h1>
     </div>
     <div data-role="content">
-        <form name='clos_bug' method='POST' action='index.php?uc=dash&action=list'>
-            <p>
-                <label for='note'>Note : </label>
-            </p>
-            <p>
-                <textarea name='note' rows='8' cols='50'>Ecrivez ici...</textarea>
-            </p>
-            <input type='hidden' name='bug' value='"+idbug+"'>
-            <center>
-                <p>
-                    <input type='submit' class='button' value='Valider' name='valider'>
-                </p>
-            </center>
-        </form>
+        <div id="contenu_clore"></div>
+    </div>
+</div>
+
+<div data-role="dialog" id="ticket_prio">
+    <div data-role="header">
+        <h1>Priorité du bug <div id="id_tick"></div></h1>
+    </div>
+    <div data-role="content">
+        <div id="contenu_prio" data-role="fieldcontain"></div>
     </div>
 </div>
 

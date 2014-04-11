@@ -39,6 +39,14 @@ switch($uc)
     }
     case 'dash':
     {
+        if (isset($_POST['note'])){
+            $message = closeBug();
+            include("../vues/v_message.php");
+        }
+        if (isset($_POST['prio'])){
+            $message = updatePrio();
+            include('../vues/v_message.php');
+        }
         if (isset($_SESSION['login'])){
             if ($_SESSION['login']['fonction'] == "Responsable" ){
                 $the_bugs = getAllBugs();
