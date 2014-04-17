@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 function clore(){
-    alert('bonjour');
+    $('#note').attr('class','');
 }
 $(document).ready(function(){
     $('#liste_tickets tr').bind('click', function(e) {
@@ -43,8 +43,8 @@ $(document).ready(function(){
                 if(data['priorite'] == "Bas"){
                     $('#Bas').attr('checked','checked');
                 }
-                $("#priorite").html("Priorité :"+data['priorite']);
-                $("#image").html("<img src='../"+data['image']+"'>");
+                $("#image").html("<img src='../"+data['image']+"' width='90%'>");
+                $("#clore").html("<a href='' onclick='clore();' data-role='button'>Clore</a><div data-role='fieldcontain' class='ui-hide-label'><label for='note'>Compte Rendu du technicien : </label><input type='text' name='note' id='note' value='' placeholder='Compte rendu du technicien' class='ui-disabled'/></div>");
                 if (fonction == "Technicien" ){
                     if(data['status'] == "Ouvert"){
 

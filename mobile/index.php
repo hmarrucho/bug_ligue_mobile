@@ -65,11 +65,7 @@ switch($uc)
         $the_techs = getAllTech();
         $tech = "";
         foreach($the_techs as $t){
-            echo "<option value='".$t->getId()."'>".$t->getName()." (".$t->getNbAssign().")</option>";
-        }
-        $prod = "";
-        foreach($the_products as $p){
-            $prod .= "<option value='".$p->getId()."'>".$p->getName()."</option>";
+           $tech .= "<option value='".$t->getId()."'>".$t->getName()." (".$t->getNbAssign().")</option>";
         }
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];

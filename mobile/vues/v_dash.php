@@ -101,24 +101,23 @@
                 </div>
                 <div id="engineer"></div>
                 <div id="reporter"></div>
-                <div data-role="fieldcontain" class="ui-hide-label">
-                    <label for='apps'>Application(s) concernées : </label>
-                    <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $prod;?>"</select>
-                </div>
                 <div id="products"></div>
-                <fieldset data-role="controlgroup">
-                        <legend>Choisir priorité : </legend>
-                        <input type="radio" name="priorite" id="Haut" value="Haut" checked="" />
-                        <label for="radio-choice-1">Haut</label>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend>Choisir une priorité :</legend>
+                        <input type="radio" name="prio" id="Haut" value="Haut"  />
+                        <label for="Haut">Haut</label>
 
-                        <input type="radio" name="priorite" id="Normal" value="Normal" checked="" />
-                        <label for="radio-choice-2">Normal</label>
+                        <input type="radio" name="prio" id="Normal" value="Normal"  />
+                        <label for="Normal">Normal</label>
 
-                        <input type="radio" name="priorite" id="Bas" value="Bas" checked="" />
-                        <label for="radio-choice-3">Bas</label>
-                </fieldset>
-                <div id="priorite"></div>
+                        <input type="radio" name="prio" id="Bas" value="Bas"  />
+                        <label for="Bas">Bas</label>
+                    </fieldset>
+                </div>
                 <div id="image"></div>
+                <div id="clore"></div>
+            <input type='submit' value='Enregistrer les changements' name='valider'>
         </form>
     </div>
 </div>
