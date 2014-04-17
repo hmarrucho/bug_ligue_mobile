@@ -10,27 +10,27 @@
     </div>
     <div data-role="content">
         <h4>Nouvel incident</h4>
-        <form name='new_bug' method='POST' action='index.php?uc=dash&action=nouveau' enctype='multipart/form-data'>
-        <p>
+        <form name='new_bug' method='POST' action='index.php?uc=dash&action=nouveau' enctype='multipart/form-data' data-ajax="false">
+        <div data-role="fieldcontain" class="ui-hide-label">
             <label for='objet'>Objet : </label>
-            <input id='objet' type='text' name='objet' size='50' maxlength='50'>
-        </p>
-        <p>
+            <input id='objet' type='text' name='objet' size='50' maxlength='50' placeholder="Objet">
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
             <label for='libelle'>Description du problème : </label>
-            <textarea id='libelle' name='libelle' size='500' maxlength='500'></textarea>
-        </p>
-        <p>
+            <textarea id='libelle' name='libelle' size='500' maxlength='500' placeholder="Description"></textarea>
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
             <label for='apps'>Application(s) concernées : </label>
-            <select multiple id='apps' name='apps[]' width='400px'>"+prod+"</select>
-        </p>
-        <p>
-            <label>Capture d'écran (optionnelle)</label>
+            <select multiple id='apps' name='apps[]' width='400px' >"+prod+"</select>
+        </div>
+        <div data-role="fieldcontain" >
+            <label>Capture d'écran (optionnelle) : </label>
             <input name='capture' type='file' style='width:300px;'/>
-        </p>
-        <p>
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
             <input type='submit' value='Valider' name='valider'>
             <input type='reset' value='Annuler' name='annuler'>
-        </p>
+        </div>
         </form>
     </div>
     <div data-role="footer" data-position="fixed">
