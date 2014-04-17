@@ -108,15 +108,5 @@
         <div id="contenu_clore"></div>
     </div>
 </div>
-
-<div data-role="dialog" id="ticket_prio">
-    <div data-role="header">
-        <h1>Priorité du bug <div id="id_tick"></div></h1>
-    </div>
-    <div data-role="content">
-        <div id="contenu_prio" data-role="fieldcontain"></div>
-    </div>
-</div>
-
 </body>
 </html>
