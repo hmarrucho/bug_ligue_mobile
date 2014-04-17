@@ -21,7 +21,7 @@
         </div>
         <div data-role="fieldcontain" class="ui-hide-label">
             <label for='apps'>Application(s) concernées : </label>
-            <select multiple id='apps' name='apps[]' width='400px' >"+prod+"</select>
+            <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $prod;?>"</select>
         </div>
         <div data-role="fieldcontain" >
             <label>Capture d'écran (optionnelle) : </label>

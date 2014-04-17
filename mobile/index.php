@@ -68,6 +68,11 @@ switch($uc)
             $message = ajouterNewBug();
             include("vues/v_message.php");
         }
+        $the_products = getAllProducts();
+        $prod = "";
+        foreach($the_products as $p){
+            $prod .= "<option value='".$p->getId()."'>".$p->getName()."</option>";
+        }
         include('./vues/v_nouveau.php');
         break;
     }
