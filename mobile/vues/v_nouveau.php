@@ -10,7 +10,7 @@
     </div>
     <div data-role="content">
         <h4>Nouvel incident</h4>
-        <form name='new_bug' method='POST' action='index.php?uc=dash&action=nouveau' enctype='multipart/form-data' data-ajax="false">
+        <form name='new_bug' method='POST' action='index.php?uc=nouveau' enctype='multipart/form-data' data-ajax="false">
         <div data-role="fieldcontain" class="ui-hide-label">
             <label for='objet'>Objet : </label>
             <input id='objet' type='text' name='objet' size='50' maxlength='50' placeholder="Objet">

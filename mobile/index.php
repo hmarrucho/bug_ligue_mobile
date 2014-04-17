@@ -67,6 +67,7 @@ switch($uc)
         if (isset($_POST['objet'])){
             $message = ajouterNewBug();
             include("vues/v_message.php");
+            header("Location:index.php?uc=dash");
         }
         $the_products = getAllProducts();
         $prod = "";
