@@ -27,24 +27,32 @@ $(document).ready(function(){
                 $("tr[name=une_ligne]").remove();
                 $("#descri_ticket").html(data['description']);
                 $("#solution_ticket").html(data['resume']);
-                $("#note").html(data['note']);
-                $("#created").html(data['created']['date']);
-                $("#engineer").html(data['engineer']);
-                $("#reporter").html(data['reporter']);
-                $("#products").html(data['products']);
-                $("#priorite").html(data['priorite']);
-                $("#image").html(data['image']);
+                if(data['status'] != "Ouvert"){
+                    $("#note").html("Compte rendu du technicien : "+data['note']);
+                }
+                $("#created").html("Crée le "+data['created']['date']);
+                $("#engineer").html("Assigné à :"+data['engineer']);
+                $("#reporter").html("Ouvert par :"+data['reporter']);
+                $("#products").html("Produit(s) concerné(s) :"+data['products']);
+                if(data['priorite'] == "Haut"){
+                    $('#Haut').attr('checked','checked');
+                }
+                if(data['priorite'] == "Normal"){
+                    $('#Normal').attr('checked','checked');
+                }
+                if(data['priorite'] == "Bas"){
+                    $('#Bas').attr('checked','checked');
+                }
+                $("#priorite").html("Priorité :"+data['priorite']);
+                $("#image").html("<img src='../"+data['image']+"'>");
                 if (fonction == "Technicien" ){
                     if(data['status'] == "Ouvert"){
-                        $("#clore_bouton").html("<a id='cloreBug' href='#ticket_clore' data-transition='flip' onClick='clore()'>Clore</a>");
+
                     }
                 }
                 if (fonction == "Responsable" ){
                     if(data['status'] == "Ouvert"){
-                        $("#clore_bouton").html("<a id='cloreBug' href='#ticket_clore' data-transition='flip' onclick=\"clore()\">Clore</a>");
-                        $("#assign_bouton").html("<a id='assignBug' href='#ticket_assign' data-transition='flip' onClick='assign_Bug_R()'>Assigner</a>");
-                        $("#prio_bouton").html("<a id='prioBug' href='#popupMenu' data-rel='popup' data-role='button' data-inline='true' data-transition='slideup' data-theme='e'>Priorité</a><div data-role='popup' id='popupMenu' data-theme='d'><ul data-role='listview' data-inset='true' style='min-width:210px;' data-theme='d'><li><a href='index.php?uc=dash&prio=haut&bug="+identifiant+"'>Haut</a></li><li><a href='index.php?uc=dash&prio=normal&bug="+identifiant+"'>Normal</a></li><li><a href='index.php?uc=dash&prio=haut&bug="+identifiant+"'>Bas</a></li></ul></div>");
-                    }
+                   }
                 }
                 $("#id_tick").html(identifiant);
                 $("#contenu_clore").html("<form name='clos_bug' method='POST' action='index.php?uc=dash'><p><label for='note'>Note : </label></p><p><textarea name='note' rows='8' cols='50' placeholder='Ecrivez ici...'></textarea></p><input type='hidden' name='bug' value='"+identifiant+"'><center><p><input type='submit' class='button' value='Valider' name='valider'></p></center></form>");

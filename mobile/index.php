@@ -44,6 +44,10 @@ switch($uc)
             $message = updatePrio();
             include('../vues/v_message.php');
         }
+        if (isset($_POST['engineer'])){
+            $message = updateAssign();
+            include('vues/v_message.php');
+        }
         if (isset($_SESSION['login'])){
             if ($_SESSION['login']['fonction'] == "Responsable" ){
                 $the_bugs = getAllBugs();
@@ -56,6 +60,16 @@ switch($uc)
                     }
                 }
             }
+        }
+        $the_products = getAllProducts();
+        $the_techs = getAllTech();
+        $tech = "";
+        foreach($the_techs as $t){
+            echo "<option value='".$t->getId()."'>".$t->getName()." (".$t->getNbAssign().")</option>";
+        }
+        $prod = "";
+        foreach($the_products as $p){
+            $prod .= "<option value='".$p->getId()."'>".$p->getName()."</option>";
         }
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];

@@ -90,19 +90,36 @@
         <h1>Detail du ticket <div id="id_ticket"></div></h1>
     </div>
     <div data-role="content">
-        <div id="descri_ticket"></div>
-        <hr/>
-        <div id="solution_ticket"></div>
-        <div id="note"></div>
-        <div id="created"></div>
-        <div id="engineer"></div>
-        <div id="reporter"></div>
-        <div id="products"></div>
-        <div id="priorite"></div>
-        <div id="image"></div>
-        <div id="clore_bouton"></div>
-        <div id="assign_bouton"></div>
-        <div id="prio_bouton"></div>
+        <form name='bug' method='POST' action='index.php?uc=dash' data-ajax="false">
+            <h1><div id="descri_ticket"></div></h1>
+                Description : <div id="solution_ticket"></div></br>
+                <div id="note"></div>
+                <div id="created"></div>
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <label for='apps'>Assigné à : </label>
+                    <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $tech;?>"</select>
+                </div>
+                <div id="engineer"></div>
+                <div id="reporter"></div>
+                <div data-role="fieldcontain" class="ui-hide-label">
+                    <label for='apps'>Application(s) concernées : </label>
+                    <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $prod;?>"</select>
+                </div>
+                <div id="products"></div>
+                <fieldset data-role="controlgroup">
+                        <legend>Choisir priorité : </legend>
+                        <input type="radio" name="priorite" id="Haut" value="Haut" checked="" />
+                        <label for="radio-choice-1">Haut</label>
+
+                        <input type="radio" name="priorite" id="Normal" value="Normal" checked="" />
+                        <label for="radio-choice-2">Normal</label>
+
+                        <input type="radio" name="priorite" id="Bas" value="Bas" checked="" />
+                        <label for="radio-choice-3">Bas</label>
+                </fieldset>
+                <div id="priorite"></div>
+                <div id="image"></div>
+        </form>
     </div>
 </div>
 
