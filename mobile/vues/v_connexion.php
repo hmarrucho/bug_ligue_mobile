@@ -1,6 +1,6 @@
 <div data-role="page">
     <div data-role="header">
-        <h1>En-tête</h1>
+        <h4>Bienvenue ! </h4>
     </div>
     <div data-role="content">
         <h4>Authentification</h4>
@@ -21,7 +21,7 @@
         </form>
     </div>
     <div data-role="footer" data-position="fixed">
-        <h4>Pied de page</h4>
+        <h4>Lemarquis - Marrucho - Silva</h4>
     </div>
 </div>
 <div data-role="dialog" id="mon_dialog_info">

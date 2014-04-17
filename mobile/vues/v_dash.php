@@ -1,8 +1,14 @@
 <a id='lnkDialog' href="#ticket_dialog" data-transition="flip" style='display:none;'></a>
 
 <div data-role="page">
-    <div data-role="header">
-        <h1>En-tête</h1>
+    <div data-role="header" data-position="fixed" >
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.php?uc=dash" data-role="button" data-icon="home" >Tableau de bord</a></li>
+                <li><a href="index.php?uc=nouveau" data-role="button" data-icon="plus">Nouveau bug</a></li>
+                <li><a href="index.php?uc=deconnexion" data-role="button" data-icon="delete">Deconnexion</a></li>
+            </ul>
+        </div>
     </div>
     <div data-role="content">
         <h4>Bienvenue sur votre console de gestion</h4>
@@ -75,7 +81,7 @@
         </div>
     </div>
     <div data-role="footer" data-position="fixed">
-        <h4>Pied de page</h4>
+        <h4>Lemarquis - Marrucho - Silva</h4>
     </div>
 </div>
 

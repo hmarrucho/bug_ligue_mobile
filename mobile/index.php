@@ -7,20 +7,17 @@ include("./vues/v_header.php") ;
 $msgErreurs = array();
 
 if(!isset($_REQUEST['uc']))
-    $uc = 'accueil';
+    $uc = 'connexion';
 else
     $uc = $_REQUEST['uc'];
 
 switch($uc)
 {
-    case 'accueil':
-    {
-        include("./vues/v_connexion.php");
-        break;
-    }
-
     case 'connexion':
     {
+        if (isset($_SESSION['login'])){
+            header("Location:index.php?uc=dash");
+        }
         if (isset($_POST['valider'])){
             $pseudo = $_POST['pseudo'];
             $mdp = $_POST['mdp'];
@@ -63,6 +60,21 @@ switch($uc)
         $bugs_en_cours = $the_bugs[0];
         $bugs_fermes =  $the_bugs[1];
         include("./vues/v_dash.php");
+        break;
+    }
+    case 'nouveau':
+    {
+        if (isset($_POST['objet'])){
+            $message = ajouterNewBug();
+            include("vues/v_message.php");
+        }
+        include('./vues/v_nouveau.php');
+        break;
+    }
+    case 'deconnexion' :
+    {
+        seDeconnecter();
+        header("Location: ./");
         break;
     }
 }
