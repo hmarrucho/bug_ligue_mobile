@@ -90,44 +90,22 @@
         <h1>Detail du ticket <div id="id_ticket"></div></h1>
     </div>
     <div data-role="content">
-        <form name='bug' method='POST' action='index.php?uc=dash' data-ajax="false">
+            <div id="form"></div>
             <h1><div id="descri_ticket"></div></h1>
                 Description : <div id="solution_ticket"></div></br>
                 <div id="note"></div>
                 <div id="created"></div>
-                <div data-role="fieldcontain" class="ui-hide-label">
+                <div id="assign" data-role="fieldcontain" class="ui-hide-label">
                     <label for='apps'>Assigné à : </label>
                     <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $tech;?>"</select>
                 </div>
                 <div id="engineer"></div>
                 <div id="reporter"></div>
                 <div id="products"></div>
-                <div data-role="fieldcontain">
-                    <fieldset data-role="controlgroup">
-                        <legend>Choisir une priorité :</legend>
-                        <input type="radio" name="prio" id="Haut" value="Haut"  />
-                        <label for="Haut">Haut</label>
-
-                        <input type="radio" name="prio" id="Normal" value="Normal"  />
-                        <label for="Normal">Normal</label>
-
-                        <input type="radio" name="prio" id="Bas" value="Bas"  />
-                        <label for="Bas">Bas</label>
-                    </fieldset>
-                </div>
+                <div id="priorite" data-role="fieldcontain"></div>
                 <div id="image"></div>
                 <div id="clore"></div>
-            <input type='submit' value='Enregistrer les changements' name='valider'>
-        </form>
-    </div>
-</div>
-
-<div data-role="dialog" id="ticket_clore">
-    <div data-role="header">
-        <h1>Clore le ticket N <div id="id_tick"></div></h1>
-    </div>
-    <div data-role="content">
-        <div id="contenu_clore"></div>
+                <div id="finform"></div>
     </div>
 </div>
 </body>
