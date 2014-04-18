@@ -90,22 +90,22 @@
         <h1>Detail du ticket <div id="id_ticket"></div></h1>
     </div>
     <div data-role="content">
-            <div id="form"></div>
+        <form name='bug' method='POST' action='index.php?uc=dash' data-ajax='false'>
+
             <h1><div id="descri_ticket"></div></h1>
                 Description : <div id="solution_ticket"></div></br>
+                <div id="idbug"></div>
                 <div id="note"></div>
                 <div id="created"></div>
-                <div id="assign" data-role="fieldcontain" class="ui-hide-label">
-                    <label for='apps'>Assigné à : </label>
-                    <select multiple id='apps' name='apps[]' width='400px' >"<?php echo $tech;?>"</select>
-                </div>
+                <div id="assign" data-role="fieldcontain" class="ui-hide-label"></div>
                 <div id="engineer"></div>
                 <div id="reporter"></div>
                 <div id="products"></div>
                 <div id="priorite" data-role="fieldcontain"></div>
                 <div id="image"></div>
                 <div id="clore"></div>
-                <div id="finform"></div>
+        <input type='submit' value='Enregistrer les changements' id='formulaire' name='valider' style='display: none;'></form>
+
     </div>
 </div>
 </body>

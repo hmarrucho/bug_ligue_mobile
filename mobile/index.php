@@ -37,16 +37,15 @@ switch($uc)
     case 'dash':
     {
         if (isset($_POST['note'])){
-            $message = closeBug();
-            include("../vues/v_message.php");
+            if (!empty($_POST['note'])){
+                $message = closeBug();
+            }
         }
         if (isset($_POST['prio'])){
             $message = updatePrio();
-            include('../vues/v_message.php');
         }
         if (isset($_POST['engineer'])){
             $message = updateAssign();
-            include('vues/v_message.php');
         }
         if (isset($_SESSION['login'])){
             if ($_SESSION['login']['fonction'] == "Responsable" ){
@@ -76,7 +75,6 @@ switch($uc)
     {
         if (isset($_POST['objet'])){
             $message = ajouterNewBug();
-            include("vues/v_message.php");
             header("Location:index.php?uc=dash");
         }
         $the_products = getAllProducts();

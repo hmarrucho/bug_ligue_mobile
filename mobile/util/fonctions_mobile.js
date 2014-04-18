@@ -6,14 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 function clore(){
-    $('#note').attr('class','ui');
+    $('#clorenote').removeAttr('class');
 }
-function inverser()
-{ if (i.style.visibility=="visible")
-{ i.style.visibility="hidden";
-    b.value="monter"; }
-else { i.style.visibility="visible";
-    b.value="cacher"; } }
 
 $(document).ready(function(){
     $('#liste_tickets tr').bind('click', function(e) {
@@ -47,7 +41,7 @@ $(document).ready(function(){
                 $("#idbug").html("<input type='hidden' name='bug' value='"+identifiant+"'>");
                 if (fonction == "Technicien" ){
                     if(data['status'] == "Ouvert"){
-                        $("#form").html("<form name='bug' method='POST' action='index.php?uc=dash' data-ajax='false'>");
+                        $("#startform").html("<form name='bug' method='POST' action='index.php?uc=dash' data-ajax='false'>");
                         $("#finform").html("<input type='submit' value='Enregistrer les changements' name='valider'></form>");
                         $("#clore").html("<a href='' onclick='clore();' data-role='button'>Clore</a><div data-role='fieldcontain' class='ui-hide-label'><label for='note'>Compte Rendu du technicien : </label><textarea name='note' id='note' placeholder='Compte rendu du technicien' class='ui-disabled'></textarea></div>");
                         if(data['priorite'] == "Haut"){
@@ -63,10 +57,10 @@ $(document).ready(function(){
                 }
                 if (fonction == "Responsable" ){
                     if(data['status'] == "Ouvert"){
-                        $("#form").html("<form name='bug' method='POST' action='index.php?uc=dash' data-ajax='false'>");
-                        $("#finform").html("<input type='submit' value='Enregistrer les changements' name='valider'></form>");
+                        $("#assign").html("<label for='apps'>Assigné à : </label><select multiple id='apps' name='apps[]' width='400px' ><?php echo $tech;?></select>");
+                        $("#formulaire").show();
                         $("#priorite").html("<fieldset data-role='controlgroup'><legend>Choisir une priorité :</legend><input type='radio' name='prio' id='Haut' value='Haut'  /><label for='Haut'>Haut</label><input type='radio' name='prio' id='Normal' value='Normal'  /><label for='Normal'>Normal</label><input type='radio' name='prio' id='Bas' value='Bas'  /><label for='Bas'>Bas</label></fieldset>");
-                        $("#clore").html("<a href='' onclick='clore();' data-role='button'>Clore</a><div data-role='fieldcontain' class='ui-hide-label'><label for='note'>Compte Rendu du technicien : </label><textarea name='note' id='note' placeholder='Compte rendu du technicien' class='ui-disabled'></textarea></div>");
+                        $("#clore").html("<a href='' onclick='clore();' data-role='button'>Clore</a><div data-role='fieldcontain' class='ui-hide-label'><label for='note'>Compte Rendu du technicien : </label><textarea name='note' id='clorenote' placeholder='Compte rendu du technicien' class='ui-disabled'></textarea></div>");
                         if(data['priorite'] == "Haut"){
                             $('#Haut').attr('checked','checked');
                         }
