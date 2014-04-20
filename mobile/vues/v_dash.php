@@ -20,27 +20,29 @@
                 <p>
                 <table><tr><th></th><th>Numéro</th><th>Titre</th><th>Date</th></tr>
                     <?php
-                    foreach ($bugs_en_cours as $bug) {
-                        if ($bug->getEngineer() != null){
-                            $engineer = $bug->getEngineer()->getName();
-                        }else{
-                            $engineer = "non affecté";
+                    if(isset($bugs_en_cours)){
+                        foreach ($bugs_en_cours as $bug) {
+                            if ($bug->getEngineer() != null){
+                                $engineer = $bug->getEngineer()->getName();
+                            }else{
+                                $engineer = "non affecté";
+                            }
+                            echo "<tr>";
+                            echo "<td><img src='../images/en_cours.png' width='30px' height='30px'/></td>";
+                            echo "<td class='colonneid'>".$bug->getId()."</td>";
+                            echo "<td =class'colonneresume'>".$bug->getResume()."</td>";
+                            echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
+                            //echo "<td class='colonnetech'>".$engineer."</td>";
+                            //echo "<td class='colonneprod'>";
+                            //foreach ($bug->getProducts() as $product) {
+                                //echo "- ".$product->getName()." ";
+                            //}
+                            echo "</td>";
+                            //echo "<li>".$bug->getDescription()."</li>";
+                            echo "</tr>";
                         }
-                        echo "<tr>";
-                        echo "<td><img src='../images/en_cours.png' width='30px' height='30px'/></td>";
-                        echo "<td class='colonneid'>".$bug->getId()."</td>";
-                        echo "<td =class'colonneresume'>".$bug->getResume()."</td>";
-                        echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
-                        //echo "<td class='colonnetech'>".$engineer."</td>";
-                        //echo "<td class='colonneprod'>";
-                        //foreach ($bug->getProducts() as $product) {
-                            //echo "- ".$product->getName()." ";
-                        //}
-                        echo "</td>";
-                        //echo "<li>".$bug->getDescription()."</li>";
-                        echo "</tr>";
-                    }
-                    ?>
+                        }
+                        ?>
 
 
                 </table>
@@ -52,25 +54,27 @@
                 <p>
                 <table><tr><th></th><th>Numéro</th><th>Titre</th><th>Date</th></tr>
                     <?php
-                    foreach ($bugs_fermes as $bug) {
-                        if ($bug->getEngineer() != null){
-                            $engineer = $bug->getEngineer()->getName();
-                        }else{
-                            $engineer = "non affecté";
+                    if(isset($bugs_fermes)){
+                        foreach ($bugs_fermes as $bug) {
+                            if ($bug->getEngineer() != null){
+                                $engineer = $bug->getEngineer()->getName();
+                            }else{
+                                $engineer = "non affecté";
+                            }
+                            echo "<tr>";
+                            echo "<td><img src='../images/ferme.png' width='30px' height='30px'/></td>";
+                            echo "<td class='colonneid'>".$bug->getId()."</td>";
+                            echo "<td =class'colonneresume'>".$bug->getResume()."</td>";
+                            echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
+                            //echo "<td class='colonnetech'>".$engineer."</td>";
+                            //echo "<td class='colonneprod'>";
+                            //foreach ($bug->getProducts() as $product) {
+                                //echo "- ".$product->getName()." ";
+                            //}
+                            echo "</td>";
+                            //echo "<td>".$bug->getDescription()."</td>";
+                            echo "</tr>";
                         }
-                        echo "<tr>";
-                        echo "<td><img src='../images/ferme.png' width='30px' height='30px'/></td>";
-                        echo "<td class='colonneid'>".$bug->getId()."</td>";
-                        echo "<td =class'colonneresume'>".$bug->getResume()."</td>";
-                        echo "<td class='colonnedate'>".$bug->getCreated()->format('d.m.Y')."</td>";
-                        //echo "<td class='colonnetech'>".$engineer."</td>";
-                        //echo "<td class='colonneprod'>";
-                        //foreach ($bug->getProducts() as $product) {
-                            //echo "- ".$product->getName()." ";
-                        //}
-                        echo "</td>";
-                        //echo "<td>".$bug->getDescription()."</td>";
-                        echo "</tr>";
                     }
                     ?>
 
